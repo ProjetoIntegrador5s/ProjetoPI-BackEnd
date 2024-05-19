@@ -14,6 +14,8 @@ public class Estagiario {
     private int id;
     @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
+    private int matricula;
 
     public int getId() {return id;}
 
@@ -25,6 +27,11 @@ public class Estagiario {
         this.nome = nome;
     }
 
+    public int getMatricula() {
+        return matricula;
+    }
 
-
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
 }
