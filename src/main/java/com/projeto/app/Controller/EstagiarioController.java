@@ -14,10 +14,17 @@ public class EstagiarioController {
 
     @Autowired
     private EstagiarioRepository estagiarioRepository;
-
     @GetMapping
     public List<Estagiario> listar(){
         return  estagiarioRepository.findAll();
+    }
+    @GetMapping("/excluir")
+    public void excluir(@RequestBody Estagiario estagiario){
+        estagiarioRepository.delete(estagiario);
+    }
+
+    @PostMapping("/excluirById")
+    public void excluirById(@RequestBody Estagiario estagiario){estagiarioRepository.deleteById(estagiario.getId());
     }
 
     @PostMapping
